@@ -1,5 +1,10 @@
+# 連投回数
+tweet_l = 1
+#ツイートする内容はスクリプトを書き換えてたのしんでください。
+# (30行目あたりを見ると幸せになるかも)
+
 OAuth = require("oauth").OAuth
-async = require("async")
+async = require "async"
 config = JSON.parse(require("fs").readFileSync(
 							__dirname + "/../config.json"))
 key = config.key
@@ -20,8 +25,8 @@ success = 0
 
 async.series [
 	(callback) ->
-		for i in [127..1] by -1
-			tweet = "バルス"
+		for i in [tweet_l..1] by -1
+			tweet = "バルス "
 			star = ""
 			for j in [i..1] by -1
 				star += "☆"
